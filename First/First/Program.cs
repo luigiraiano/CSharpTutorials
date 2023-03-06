@@ -68,3 +68,61 @@ namespace Luigi
         Luigi, Angela, Michele
     }
 }
+
+namespace Polimorphism
+{
+
+    public class Base
+    {
+        protected double x_;
+        protected string s_;
+
+        public Base()
+        {
+            Console.WriteLine("Base class instantiated.");
+            s_ = "Base";
+            x_ = 0;
+        }
+
+        public void setValue(in double x)
+        {
+            x_ = x;
+        }
+
+        public void setString(in string s)
+        {
+            s_ = s;
+        }
+
+        public virtual void getProperties()
+        {
+            Console.WriteLine("Type: " + x_.ToString());
+            Console.WriteLine("String: " + s_);
+        }
+    }
+
+    public class Child1 : Base
+    {
+        private double x1_ = 0;
+
+        public Child1() : base()
+        {
+            Console.WriteLine("Base class instantiated.");
+            s_ = "Child1";
+            x_ = 1;
+        }
+
+        public void setValue2(in double x)
+        {
+            x1_ = x;
+        }
+
+        public override void getProperties()
+        {
+            Console.WriteLine("Type: " + x_.ToString());
+            Console.WriteLine("String: " + s_);
+            Console.WriteLine("Child ID: " + x1_.ToString());
+        }
+    }
+
+}
