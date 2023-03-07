@@ -20,6 +20,16 @@ internal class Program
         Console.WriteLine("Compute Sum v2");
         Luigi.Tutorial.computeSum(in a, in b, ref sum);
         Console.WriteLine(sum.ToString());
+
+        Polimorphism.Base base_class = new Polimorphism.Base();
+        Polimorphism.Child1 child1_class = new Polimorphism.Child1();
+
+        // Get Properties from Base Class
+        base_class.getProperties();
+
+        // Get Properties from Child1 Class (child of Base)
+        child1_class.getProperties();
+
     }
 }
 
@@ -107,7 +117,7 @@ namespace Polimorphism
 
         public Child1() : base()
         {
-            Console.WriteLine("Base class instantiated.");
+            Console.WriteLine("Child1 class instantiated.");
             s_ = "Child1";
             x_ = 1;
         }
